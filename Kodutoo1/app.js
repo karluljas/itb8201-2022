@@ -1,23 +1,24 @@
-// Importing express module
-const express = require('express');
-const app = express();
+const http = require("http")
+const fs = require("fs")
+const port = 3000
 
-app.use(express.json());
+const server = http.createServer(function (req, res) {
+    res.writeHead(200, { "Content-Type": "text/html"})
+    fs.readFile("index.html", function(error, data) {
+        if (error) {
+            res.writeHead(404)
+            res.write("404: Lõhkusid kõik ära >:(, faili ei leitud")
+        } else {
+            res.write(data)
+        }
+        res.end()
+    })
+})
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-});
-
-app.post('/', (req, res) => {
-    const { username, password } = req.body;
-    const { authorization } = req.headers;
-    res.send({
-        username,
-        password,
-        authorization,
-    });
-});
-
-app.listen(3000, () => {
-    console.log('Our express server is up on port 3000');
-});
+server.listen(port, function(error) {
+    if (error) {
+        console.log("Lõhkusid kõik ära >:(", error)
+    } else {
+        console.log("Server kuulab pordil " + port)
+    }
+})
