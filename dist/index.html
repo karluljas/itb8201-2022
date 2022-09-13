@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title>iaib213479</title>
+</head>
+<body style="background-color:lightsteelblue;"></body>
+<h1>veebileht on hetkel ehituses</h1><br>
+
+<article class="regular">
+    <p>Mis su nimi on?</p>
+    <label for="Name"></label><input type="text" id="Name" name="Name"><br>
+    <input type="button" id="nupp" value="Enter">
+    <p class="output" id="output1"></p>
+</article>
+
+<script>
+    const txt = document.getElementById("Name")
+    const btn = document.getElementById("nupp")
+    const out = document.getElementById("output1")
+    const hello = ("Tere, ")
+
+    function fun1() {
+        out.innerHTML = hello + txt.value;
+    }
+
+    btn.addEventListener("click", fun1)
+
+</script>
+
+<h2><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">proovi uuesti</a></h2>
+<nav><a href="/about">esimese kodutöö kokkuvõte</a></nav>
+<table style="float:left">
+    <img src="https://c.tenor.com/ULAjbmk07KkAAAAd/mouse-eat.gif" alt="">
+</table>
+
+<p>kaks tomatit lähevad üle tee, üks ütleb auto tuleb *plörts*, teine küsib kust? *plörts*.</p>
+</html>
