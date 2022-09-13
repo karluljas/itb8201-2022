@@ -4,7 +4,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 // kuulab päringuid
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
 
 //esileht
 app.get("/", (req, res) => {
